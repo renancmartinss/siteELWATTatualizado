@@ -1,0 +1,105 @@
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: #0B0A08;
+  color: #F0E8D8;
+  background-image: radial-gradient(ellipse 100% 45% at 50% -15%, rgba(255,85,0,0.07) 0%, transparent 70%);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Syne', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+h1 { letter-spacing: -0.035em; }
+
+/* Text selection */
+::selection { background: rgba(255,85,0,0.28); color: #F0E8D8; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0B0A08; }
+::-webkit-scrollbar-thumb { background: #2C2820; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #FF5500; }
+
+/* Ping animation for status dot */
+.ping { animation: ping 1.5s cubic-bezier(0,0,.2,1) infinite; }
+@keyframes ping { 75%,100% { transform: scale(2); opacity: 0; } }
+
+/* Hero atmospheric glow — warmer, more dramatic */
+.hero-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 55% at 65% -5%, rgba(255,85,0,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 35% 30% at 90% 35%, rgba(255,160,0,0.08) 0%, transparent 50%);
+}
+
+/* CTA section ambient glow */
+.cta-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,85,0,0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 15% 85%, rgba(255,140,0,0.05) 0%, transparent 50%);
+}
+
+/* Subtle circuit grid pattern */
+.section-grid {
+  background-image:
+    linear-gradient(rgba(255,85,0,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,85,0,0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Stats number glow */
+.stat-num {
+  text-shadow: 0 0 30px rgba(255,85,0,0.5);
+}
+
+/* Brand badge / "24h" card */
+.brand-badge-glow {
+  box-shadow: 0 8px 40px rgba(255,85,0,0.45), 0 2px 12px rgba(255,85,0,0.25);
+}
+
+/* Enhanced card hover — subtle orange ambient */
+article {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+article:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,85,0,0.15), 0 0 20px rgba(255,85,0,0.06);
+}
+
+/* CTA primary button — gradient + glow */
+.cta-primary {
+  background: linear-gradient(135deg, #FF5500 0%, #FF8800 100%) !important;
+  transition: all 0.25s ease !important;
+}
+.cta-primary:hover {
+  background: linear-gradient(135deg, #E04800 0%, #FF6A00 100%) !important;
+  box-shadow: 0 8px 36px rgba(255,85,0,0.55) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Timeline left border glow */
+.timeline-item {
+  border-left-color: #FF5500;
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #FF5500, rgba(255,85,0,0.2));
+  filter: blur(3px);
+  opacity: 0.6;
+}
+
+/* Form input focus ring improvement */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: rgba(255,85,0,0.6) !important;
+  box-shadow: 0 0 0 3px rgba(255,85,0,0.12);
+}
